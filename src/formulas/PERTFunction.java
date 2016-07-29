@@ -40,7 +40,13 @@ public class PERTFunction
 		if (amortizationTableQuestion.equals("y"))
 		{
 			System.out.println("Here You Go!");
-			//place headers here
+			System.out.println("");
+			String loanAmountColumn = "Remaining Balance";
+			String monthlyPaymentColumn = "Monthly Payment";	
+			String principlePaymentColumn = "Principle Paid";
+			String interestPaymentColumn = "Interest Paid";
+			System.out.printf("%15s %15s %15s %15s %n", loanAmountColumn, monthlyPaymentColumn, principlePaymentColumn, interestPaymentColumn);
+			
 			while (loanAmount >= 0)
 			{
 				principlePayment = 0;
@@ -49,24 +55,11 @@ public class PERTFunction
 				principlePayment = monthlyPayment - interestPayment;
 				loanAmount = newLoanAmount - principlePayment;
 				
-				
-				System.out.printf("%10.2f %10.2f %10.2f %10.2f %n", newLoanAmount, monthlyPayment, principlePayment, interestPayment);
-				
-				/*ArrayList <Double> amortizationTable = new ArrayList <Double> ();
-				amortizationTable.add(newLoanAmount);
-				amortizationTable.add(monthlyPayment);
-				amortizationTable.add(principlePayment);
-				amortizationTable.add(interestPayment);
-				System.out.println(amortizationTable);
-				*/
-				
-				
-			
+				System.out.printf("%15.2f %15.2f %15.2f %15.2f %n", newLoanAmount, monthlyPayment, principlePayment, interestPayment);
 			}	
 		}
 		return totalPaid;
 	}
-	
 	
 	//where functions go
 	
